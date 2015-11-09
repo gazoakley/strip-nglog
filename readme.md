@@ -1,10 +1,8 @@
-# strip-debug [![Build Status](https://travis-ci.org/sindresorhus/strip-debug.svg?branch=master)](https://travis-ci.org/sindresorhus/strip-debug)
+# strip-nglog
 
-> Strip `console`, `alert`, and `debugger` statements from JavaScript code
+> Strip `$log` statements from JavaScript code
 
 Useful for making sure you didn't leave any logging in production code.
-
-Also available as [gulp](https://github.com/sindresorhus/gulp-strip-debug)/[grunt](https://github.com/sindresorhus/grunt-strip-debug)/[broccoli](https://github.com/sindresorhus/broccoli-strip-debug) plugins.
 
 
 ## Usage
@@ -16,8 +14,8 @@ $ npm install --save strip-debug
 ```js
 const stripDebug = require('strip-debug');
 
-stripDebug('function foo(){console.log("foo");alert("foo");debugger;}').toString();
-//=> 'function foo(){void 0;void 0;}'
+stripDebug('function foo(){$log.debug("foo");debugger;}').toString();
+//=> 'function foo(){void 0;}'
 ```
 
 
@@ -29,7 +27,7 @@ Returns the modified [Esprima AST](http://esprima.org) which can be used to make
 
 Call `.toString()` to get the stringified output.
 
-To prevent any side-effects, `console.*`/`alert*` is replaced with `void 0` instead of being stripped.
+To prevent any side-effects, `$log.*` is replaced with `void 0` instead of being stripped.
 
 ### input
 
