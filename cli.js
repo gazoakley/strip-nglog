@@ -7,12 +7,12 @@ var strip = require('./');
 
 var cli = meow([
 	'Usage',
-	'  $ strip-debug <input file> > <output file>',
-	'  $ cat <input file> | strip-debug > <output file>',
+	'  $ strip-nglog <input file> > <output file>',
+	'  $ cat <input file> | strip-nglog > <output file>',
 	'',
 	'Examples',
-	'  $ strip-debug src/app.js > dist/app.js',
-	'  $ cat src/app.js | strip-debug > dist/app.js'
+	'  $ strip-nglog src/app.js > dist/app.js',
+	'  $ cat src/app.js | strip-nglog > dist/app.js'
 ]);
 
 if (process.stdin.isTTY) {

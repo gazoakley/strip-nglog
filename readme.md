@@ -8,20 +8,20 @@ Useful for making sure you didn't leave any logging in production code.
 ## Usage
 
 ```
-$ npm install --save strip-debug
+$ npm install --save gazoakley/strip-nglog
 ```
 
 ```js
-const stripDebug = require('strip-debug');
+const stripNgLog = require('strip-nglog');
 
-stripDebug('function foo(){$log.debug("foo");debugger;}').toString();
+stripNgLog('function foo(){$log.debug("foo");}').toString();
 //=> 'function foo(){void 0;}'
 ```
 
 
 ### API
 
-## stripDebug(input)
+## stripNgLog(input)
 
 Returns the modified [Esprima AST](http://esprima.org) which can be used to make additional modifications.
 
@@ -39,22 +39,23 @@ Pass in a string of JavaScript code or a [Esprima compatible AST](http://esprima
 ## CLI
 
 ```
-$ npm install --global strip-debug
+$ npm install --global strip-nglog
 ```
 
 ```
-$ strip-debug --help
+$ strip-nglog --help
 
   Usage
-    $ strip-debug <input file> > <output file>
-    $ cat <input file> | strip-debug > <output file>
+    $ strip-nglog <input file> > <output file>
+    $ cat <input file> | strip-nglog > <output file>
 
   Example
-    $ strip-debug src/app.js > dist/app.js
-    $ cat src/app.js | strip-debug > dist/app.js
+    $ strip-nglog src/app.js > dist/app.js
+    $ cat src/app.js | strip-nglog > dist/app.js
 ```
 
 
 ## License
 
+MIT © [Gareth Oakley](http://gazoakley.com)
 MIT © [Sindre Sorhus](http://sindresorhus.com)
