@@ -1,6 +1,6 @@
 {
   "name": "strip-nglog",
-  "version": "1.1.1",
+  "version": "1.0.0",
   "description": "Strip console, alert, and debugger statements from JavaScript code",
   "license": "MIT",
   "repository": "gazoakley/strip-nglog",
